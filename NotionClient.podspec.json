@@ -2,7 +2,7 @@
     "name": "NotionClient",
     "version": "0.0.1",
     "homepage": "https://github.com/DavidDeBels/notionclient-ios-macos",
-    "summary": "Unofficial SDK for the Notion API for iOS / macOS.",
+    "summary": "Unofficial Notion API SDK for iOS & macOS.",
     "license": "MIT",
     "authors": {
         "David De Bels": "david.de.bels@gmail.com"

@@ -1,6 +1,8 @@
 # NotionClient: a Notion SDK for iOS & macOS
 
-An unofficial SDK to the public Notion API for iOS. This is an alpha version and still work in progress.
+<img src="https://github.com/DavidDeBels/NotionClient/raw/main/readme_banner.png" />
+
+Unofficial Notion API SDK for iOS & macOS. This is an alpha version and still work in progress.
 
 ## TODO
 
