@@ -1,0 +1,16 @@
+PODS:
+  - NotionClient (0.0.1)
+
+DEPENDENCIES:
+  - NotionClient (from `../../../`)
+
+EXTERNAL SOURCES:
+  NotionClient:
+    :path: "../../../"
+
+SPEC CHECKSUMS:
+  NotionClient: db0cf2cd7ba2339e76f74e5d249a996916e0d5e0
+
+PODFILE CHECKSUM: 4f77da57205618ef7c458561854e6de444e217b7
+
+COCOAPODS: 1.10.1

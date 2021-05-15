@@ -1,0 +1,406 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63EFE08226503CD8000C12BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE08126503CD8000C12BB /* AppDelegate.swift */; };
+		63EFE08426503CD8000C12BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE08326503CD8000C12BB /* SceneDelegate.swift */; };
+		63EFE08626503CD8000C12BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE08526503CD8000C12BB /* ViewController.swift */; };
+		63EFE08926503CD8000C12BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EFE08726503CD8000C12BB /* Main.storyboard */; };
+		63EFE08B26503CDA000C12BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63EFE08A26503CDA000C12BB /* Assets.xcassets */; };
+		63EFE08E26503CDA000C12BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EFE08C26503CDA000C12BB /* LaunchScreen.storyboard */; };
+		D2409971C0F02628E18222F9 /* libPods-iOS-NotionClientExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A09F97CE08610F7131DDBE /* libPods-iOS-NotionClientExample.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		454B0F4FBD177AA4CE99B5BD /* Pods-iOS-NotionClientExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NotionClientExample.debug.xcconfig"; path = "Target Support Files/Pods-iOS-NotionClientExample/Pods-iOS-NotionClientExample.debug.xcconfig"; sourceTree = "<group>"; };
+		63EFE07E26503CD8000C12BB /* NotionClientExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotionClientExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63EFE08126503CD8000C12BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63EFE08326503CD8000C12BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		63EFE08526503CD8000C12BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		63EFE08826503CD8000C12BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63EFE08A26503CDA000C12BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63EFE08D26503CDA000C12BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63EFE08F26503CDA000C12BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63EFE13C265045F5000C12BB /* NotionClientExample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NotionClientExample-Bridging-Header.h"; sourceTree = "<group>"; };
+		84A09F97CE08610F7131DDBE /* libPods-iOS-NotionClientExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOS-NotionClientExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE4EA650C693331F074D7F92 /* Pods-iOS-NotionClientExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-NotionClientExample.release.xcconfig"; path = "Target Support Files/Pods-iOS-NotionClientExample/Pods-iOS-NotionClientExample.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63EFE07B26503CD8000C12BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2409971C0F02628E18222F9 /* libPods-iOS-NotionClientExample.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63EFE07526503CD8000C12BB = {
+			isa = PBXGroup;
+			children = (
+				63EFE08026503CD8000C12BB /* NotionClientExample */,
+				63EFE07F26503CD8000C12BB /* Products */,
+				DF09C575AF65C471F2A3F112 /* Pods */,
+				6F9B1E75B1BCEB5A9F032C22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		63EFE07F26503CD8000C12BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63EFE07E26503CD8000C12BB /* NotionClientExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63EFE08026503CD8000C12BB /* NotionClientExample */ = {
+			isa = PBXGroup;
+			children = (
+				63EFE08126503CD8000C12BB /* AppDelegate.swift */,
+				63EFE08326503CD8000C12BB /* SceneDelegate.swift */,
+				63EFE08526503CD8000C12BB /* ViewController.swift */,
+				63EFE08726503CD8000C12BB /* Main.storyboard */,
+				63EFE08A26503CDA000C12BB /* Assets.xcassets */,
+				63EFE08C26503CDA000C12BB /* LaunchScreen.storyboard */,
+				63EFE08F26503CDA000C12BB /* Info.plist */,
+				63EFE13C265045F5000C12BB /* NotionClientExample-Bridging-Header.h */,
+			);
+			path = NotionClientExample;
+			sourceTree = "<group>";
+		};
+		6F9B1E75B1BCEB5A9F032C22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84A09F97CE08610F7131DDBE /* libPods-iOS-NotionClientExample.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF09C575AF65C471F2A3F112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				454B0F4FBD177AA4CE99B5BD /* Pods-iOS-NotionClientExample.debug.xcconfig */,
+				FE4EA650C693331F074D7F92 /* Pods-iOS-NotionClientExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63EFE07D26503CD8000C12BB /* NotionClientExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63EFE09226503CDA000C12BB /* Build configuration list for PBXNativeTarget "NotionClientExample" */;
+			buildPhases = (
+				E4CEE133E49595CDE4F9E742 /* [CP] Check Pods Manifest.lock */,
+				63EFE07A26503CD8000C12BB /* Sources */,
+				63EFE07B26503CD8000C12BB /* Frameworks */,
+				63EFE07C26503CD8000C12BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NotionClientExample;
+			productName = NotionClientExample;
+			productReference = 63EFE07E26503CD8000C12BB /* NotionClientExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63EFE07626503CD8000C12BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					63EFE07D26503CD8000C12BB = {
+						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
+					};
+				};
+			};
+			buildConfigurationList = 63EFE07926503CD8000C12BB /* Build configuration list for PBXProject "NotionClientExample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63EFE07526503CD8000C12BB;
+			productRefGroup = 63EFE07F26503CD8000C12BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63EFE07D26503CD8000C12BB /* NotionClientExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63EFE07C26503CD8000C12BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63EFE08E26503CDA000C12BB /* LaunchScreen.storyboard in Resources */,
+				63EFE08B26503CDA000C12BB /* Assets.xcassets in Resources */,
+				63EFE08926503CD8000C12BB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4CEE133E49595CDE4F9E742 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iOS-NotionClientExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63EFE07A26503CD8000C12BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63EFE08626503CD8000C12BB /* ViewController.swift in Sources */,
+				63EFE08226503CD8000C12BB /* AppDelegate.swift in Sources */,
+				63EFE08426503CD8000C12BB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		63EFE08726503CD8000C12BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63EFE08826503CD8000C12BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63EFE08C26503CDA000C12BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63EFE08D26503CDA000C12BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		63EFE09026503CDA000C12BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63EFE09126503CDA000C12BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63EFE09326503CDA000C12BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 454B0F4FBD177AA4CE99B5BD /* Pods-iOS-NotionClientExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotionClientExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.flightrange.NotionClientExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotionClientExample/NotionClientExample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63EFE09426503CDA000C12BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4EA650C693331F074D7F92 /* Pods-iOS-NotionClientExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotionClientExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = net.flightrange.NotionClientExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "NotionClientExample/NotionClientExample-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63EFE07926503CD8000C12BB /* Build configuration list for PBXProject "NotionClientExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63EFE09026503CDA000C12BB /* Debug */,
+				63EFE09126503CDA000C12BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63EFE09226503CDA000C12BB /* Build configuration list for PBXNativeTarget "NotionClientExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63EFE09326503CDA000C12BB /* Debug */,
+				63EFE09426503CDA000C12BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63EFE07626503CD8000C12BB /* Project object */;
+}

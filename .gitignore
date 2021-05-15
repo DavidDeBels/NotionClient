@@ -1,0 +1,39 @@
+# Xcode
+build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+!default.xcworkspace
+xcuserdata
+*.moved-aside
+
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.DS_Store
+.Spotlight-V100
+.TrashesA
+.svn/
+.idea/
+*.ipa
+
+# CocoaPods
+*/Pods
+Pods/
+Dev Pods/
+
+# Carthage
+*/Carthage
+Carthage/
+
+# Dev Project
+*/Dev
+Dev/
