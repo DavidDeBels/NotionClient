@@ -87,15 +87,17 @@ Import Notion.h in the Objective-C Bridging Header:
 
 All communication with the Notion API happens using the NotionClient object. To initialize it you'll need a token, see the [official Authorization guide](https://developers.notion.com/docs/authorization) for more info.
 
+Swift:
 ```swift
 let client = NotionClient.init(token: "NOTION_INTEGRATION_TOKEN")
 ```
 
+Objective-C
 ```objectivec
 NotionClient *client = [NotionClient clientWithToken:@"NOTION_INTEGRATION_TOKEN"];
 ```
 
-More documentation coming soon!
+### More documentation coming soon!
 
 ## License
 
