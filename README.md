@@ -5,6 +5,7 @@ An unofficial SDK to the public Notion API for iOS. This is an alpha version and
 ## TODO
 
 Features:
+- Create new pages in a database
 - Add filters & sorts for database query
 - Make all objects copyable
 - Add Foundation objects for blocks / modifying page contents
@@ -23,15 +24,14 @@ Support:
 
 ## Introduction
 
-NotionClient is a native iOS & macOS SDK for [Notion's official API](https://developers.notion.com/). NotionClient wraps all API responses and JSON objects in native Foundation objects. The same Foundation objects can be used to send to the API so it never necessary to deal with Notion's complex JSON structure 
+NotionClient is a native iOS & macOS SDK for [Notion's official API](https://developers.notion.com/). NotionClient converts all API JSON objects to native Foundation objects. API responses are automatically converted to Foundation objects making it a lot easier to read the data coming from Notion. Those same Foundation objects can then be modified and sent back to the API to update the objects. Several objects also have convenience initializers for the most common use cases, e.g. setting a text property with just 1 string in 1 color.
 
+This way, there is never any need to deal with Notion's complex JSON structure directly. 
 
 
 ## Requirements
 
-- Xcode 11+
-- iOS 10 or above
-- Swift 4.2 or above (when using Swift)
+- iOS 11 or above
 
 
 ## Installation
@@ -50,7 +50,7 @@ Add NotionClient to your Podfile and run `pod install`.
 
 ```ruby
 # Podfile
-platform :ios, '10.0'
+platform :ios, '11.0'
 
 target 'YOUR_TARGET_NAME' do
     # Dynamic frameworks is supported but not required
@@ -79,15 +79,21 @@ Import Notion.h in the Objective-C Bridging Header:
 #import <NotionClient/Notion.h>
 ```
 
-Import the NotionClient module:
-
-```swift
-import NotionClient
-```
-
 ## Documentation
 
-Coming soon
+### Creating a NotionClient
+
+All communication with the Notion API happens using the NotionClient object. To initialize it you'll need a token, see the [official Authorization guide](https://developers.notion.com/docs/authorization) for more info.
+
+```swift
+let client = NotionClient.init(token: "NOTION_INTEGRATION_TOKEN")
+```
+
+```objectivec
+NotionClient *client = [NotionClient clientWithToken:@"NOTION_INTEGRATION_TOKEN"];
+```
+
+More documentation coming soon!
 
 ## License
 
