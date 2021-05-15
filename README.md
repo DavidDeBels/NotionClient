@@ -92,7 +92,7 @@ Swift:
 let client = NotionClient.init(token: "NOTION_INTEGRATION_TOKEN")
 ```
 
-Objective-C
+Objective-C:
 ```objectivec
 NotionClient *client = [NotionClient clientWithToken:@"NOTION_INTEGRATION_TOKEN"];
 ```
