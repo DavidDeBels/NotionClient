@@ -48,7 +48,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// MARK: Dates
 
-+ (NSDate *)dateFromString:(NSString *)string;
++ (nullable NSDate *)dateFromString:(NSString *)string;
 
 + (NSString *)stringFromDate:(NSDate *)date;
 

@@ -395,11 +395,15 @@ static NSISO8601DateFormatter *_shortDateFormatter = nil;
 }
 
 + (NSDate *)dateFromString:(NSString *)string {
-    if (string.length > 10) {
-        return [[self dateFormatter] dateFromString:string];
-    } else {
-        return [[self shortDateFormatter] dateFromString:string];
+    if (string) {
+        if (string.length > 10) {
+            return [[self dateFormatter] dateFromString:string];
+        } else {
+            return [[self shortDateFormatter] dateFromString:string];
+        }
     }
+    
+    return nil;
 }
 
 + (NSString *)stringFromDate:(NSDate *)date {

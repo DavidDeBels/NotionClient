@@ -33,6 +33,8 @@
     NotionDateProperty *property = [[self alloc] init];
     property.name = name;
     property.includeTime = includeTime;
+    property.start = start;
+    property.end = end;
     
     return property;
 }
@@ -69,10 +71,14 @@
 - (NSMutableDictionary *)serializedObject {
     NSMutableDictionary *dictionary = [super serializedObject];
 
-    dictionary[@"date"] = @{
-        @"start": self.start ? [NotionHelper stringFromDate:self.start] : nil,
-        @"end": self.end ? [NotionHelper stringFromDate:self.end] : nil
-    };
+    NSMutableDictionary *date = [NSMutableDictionary new];
+    if (self.start) {
+        date[@"start"] = [NotionHelper stringFromDate:self.start];
+    }
+    if (self.end) {
+        date[@"end"] = [NotionHelper stringFromDate:self.end];
+    }
+    dictionary[@"date"] = date.count > 0 ? date : NSNull.null;
     
     return dictionary;
 }
