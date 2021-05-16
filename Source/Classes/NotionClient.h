@@ -38,15 +38,29 @@ extern NSErrorDomain const NotionClientErrorDomain;
 
 - (void)fetchAllUsersWithCompletion:(void(^)(NSArray<NotionUser *> *results, NSError *error))completion;
 
-/// MARK: Database
+/// MARK: Query Database
 
 - (void)queryDatabaseWithId:(NSString *)databaseId completion:(void(^)(NSArray<NotionPage *> * _Nullable results, NSError * _Nullable error))completion;
 
+/// MARK: Get Pages
+
+- (void)getPageWithId:(NSString *)pageId completion:(void(^)(NotionPage * _Nullable page, NSError * _Nullable error))completion;
+
+/// MARK: Add Pages
+
+- (void)addPage:(NotionPage *)page databaseId:(NSString *)databaseId completion:(void(^)(NotionPage * _Nullable page, NSError * _Nullable error))completion;
+
 /// MARK: Update Page
 
-- (void)updatePageWithId:(NSString *)pageId properties:(NSArray<NotionProperty *> *)properties completion:(void(^)(NotionPage *page, NSError *error))completion;
+- (void)updatePage:(NotionPage *)page completion:(void (^)(NotionPage * _Nullable page, NSError * _Nullable error))completion;
+
+- (void)updatePageWithId:(NSString *)pageId properties:(NSArray<NotionProperty *> *)properties completion:(void(^)(NotionPage * _Nullable page, NSError * _Nullable error))completion;
 
 - (void)updatePageWithId:(NSString *)pageId archived:(BOOL)archived completion:(void(^)(NotionPage * _Nullable page, NSError *error))completion;
+
+/// MARK: Duplicate Page
+
+// - (void)duplicatePage:(NotionPage *)page databaseId:(NSString *)databaseId completion:(void(^)(NotionPage * _Nullable page, NSError * _Nullable error))completion;
 
 @end
 

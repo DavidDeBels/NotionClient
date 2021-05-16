@@ -8,6 +8,8 @@
 #import "NotionClient.h"
 #import "NotionObject.h"
 #import "NotionProperty.h"
+#import "NotionTitleProperty.h"
+#import "NotionRichText.h"
 
 #import "NotionPage.h"
 #import "NotionUser.h"
@@ -140,7 +142,77 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
     }];
 }
 
+/// MARK: Get Database Page
+
+- (void)getPageWithId:(NSString *)pageId completion:(void(^)(NotionPage *page, NSError *error))completion {
+    // Endpoint path
+    NSString *path = [NSString stringWithFormat:@"/pages/%@", pageId];
+    
+    // Create & perform request
+    NSMutableURLRequest *request = [self requestForMethod:@"GET" path:path query:nil];
+    
+    [self performRequest:request expectedStatusCode:200 completion:^(NSDictionary *responseBody, NSError *error) {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        NotionPage *page = [[NotionPage alloc] initWithDictionary:responseBody];
+        completion(page, nil);
+    }];
+}
+
+/// MARK: Create Database Page
+
+- (void)addPage:(NotionPage *)page databaseId:(NSString *)databaseId completion:(void(^)(NotionPage *page, NSError *error))completion {
+    // Make sure the parent is set correctly
+    page.parentId = databaseId;
+    page.parentType = NotionParentTypeDatabase;
+    
+    // Endpoint path
+    NSString *path = @"/pages";
+    
+    // Request Body
+    NSDictionary *body = page.serializedObject;
+    
+    // Create & perform request
+    NSMutableURLRequest *request = [self requestForMethod:@"POST" path:path query:nil];
+    request.HTTPBody = [body JSONDataWithError:nil];
+    
+    [self performRequest:request expectedStatusCode:200 completion:^(NSDictionary *responseBody, NSError *error) {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        NotionPage *page = [[NotionPage alloc] initWithDictionary:responseBody];
+        completion(page, nil);
+    }];
+}
+
 /// MARK: Update Page
+
+- (void)updatePage:(NotionPage *)page completion:(void (^)(NotionPage *, NSError *))completion {
+    // Endpoint path
+    NSString *path = [NSString stringWithFormat:@"/pages/%@", page.id];
+    
+    // Request Body
+    NSMutableDictionary *body = page.serializedObject;
+    
+    // Create & perform request
+    NSMutableURLRequest *request = [self requestForMethod:@"PATCH" path:path query:nil];
+    request.HTTPBody = [body JSONDataWithError:nil];
+
+    [self performRequest:request expectedStatusCode:200 completion:^(NSDictionary *responseBody, NSError *error) {
+        if (error) {
+            completion(nil, error);
+            return;
+        }
+        
+        NotionPage *page = [[NotionPage alloc] initWithDictionary:responseBody];
+        completion(page, nil);
+    }];
+}
 
 - (void)updatePageWithId:(NSString *)pageId properties:(NSArray<NotionProperty *> *)properties completion:(void(^)(NotionPage *page, NSError *error))completion {
     // Endpoint path
@@ -193,6 +265,34 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
         completion(page, nil);
     }];
 }
+
+/// MARK: Duplicate Page
+
+- (void)duplicatePage:(NotionPage *)page databaseId:(NSString *)databaseId completion:(void(^)(NotionPage *page, NSError *error))completion {
+    [self duplicatePage:page databaseId:databaseId prefix:@"Copy of " suffix:nil completion:completion];
+}
+
+- (void)duplicatePage:(NotionPage *)page databaseId:(NSString *)databaseId prefix:(NSString *)prefix suffix:(NSString *)suffix completion:(void(^)(NotionPage *page, NSError *error))completion {
+    NotionPage *copiedPage = [NotionPage pageWithProperties:page.properties.allValues];
+    copiedPage.archived = page.archived;
+    
+    // Add a prefix or suffix to the title to differentiate the duplicated page
+    NotionTitleProperty *copiedTitleProperty = copiedPage.titleProperty;
+    if (copiedTitleProperty && copiedTitleProperty.parts && (prefix || suffix)) {
+        NSMutableArray *parts = [copiedTitleProperty.parts mutableCopy];
+        if (prefix) {
+            [parts insertObject:[NotionRichText textWithContent:prefix] atIndex:0];
+        }
+        if (suffix) {
+            [parts addObject:[NotionRichText textWithContent:suffix]];
+        }
+        
+        copiedTitleProperty.parts = parts;
+    }
+
+    [self addPage:copiedPage databaseId:databaseId completion:completion];
+}
+
 
 /// MARK: Notion Request
 

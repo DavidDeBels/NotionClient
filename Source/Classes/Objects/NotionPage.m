@@ -7,26 +7,48 @@
 
 #import "NotionPage.h"
 #import "NotionTitleProperty.h"
+#import "NotionRichText.h"
 
-/// MARK: NotionPage Class Extension
+/// MARK: - NotionPage Class Extension
 
 @interface NotionPage ()
 
+@property (nonatomic, strong, readonly) NSMutableDictionary *internalProperties;
+
 @end
 
-/// MARK: NotionPage Implementation
+/// MARK: - NotionPage Implementation
 
 @implementation NotionPage
 
 @synthesize object = _object;
+@synthesize properties = _properties;
 
 /// MARK: Init
+
++ (NotionPage *)pageWithTitle:(NSString *)title {
+    NotionTitleProperty *titleProperty = [NotionTitleProperty titleWithName:@"title" title:title];
+    return [self pageWithProperties:@[titleProperty]];
+}
+
++ (NotionPage *)pageWithProperties:(NSArray<NotionProperty *> *)properties {
+    NotionPage *page = [[self alloc] init];
+    for (NotionProperty *property in properties) {
+        [page addProperty:property];
+    }
+    
+    return page;
+}
 
 - (instancetype)init {
     self  = [super init];
     if (self) {
         _object = NotionObjectTypePage;
         _parentType = NotionParentTypeUnknown;
+        
+        _createdTime = [NSDate date];
+        _lastEditedTime = [NSDate date];
+        _internalProperties = [NSMutableDictionary new];
     }
     
     return self;
@@ -73,17 +95,69 @@
         if (class) {
             NotionProperty *property = [[class alloc] initWithName:key dictionary:value];
             properties[key] = property;
-            
-            /*
-            // Special case, if the property is the title, set the title of the page
-            if (property.type == NotionPropertyTypeTitle) {
-                _title = [((NSDictionary *)[[property.rawData arrayForKeyOrNil:@"title"] firstObject]) stringForKeyOrNil:@"plain_text"];
-            }
-             */
         }
     }
     
-    _properties = [properties copy];
+    [_internalProperties removeAllObjects];
+    [_internalProperties addEntriesFromDictionary:properties];
+}
+
+/// MARK: Page Properties
+
+- (NSDictionary<NSString *,NotionProperty *> *)properties {
+    return [self.internalProperties copy];
+}
+
+- (void)setProperties:(NSDictionary<NSString *,NotionProperty *> *)properties {
+    [self.internalProperties removeAllObjects];
+    if (properties) {
+        [self.internalProperties addEntriesFromDictionary:properties];
+    }
+}
+
+- (void)addProperty:(NotionProperty *)property {
+    if (property && property.name) {
+        [self.internalProperties setObject:property forKey:property.name];
+    }
+}
+
+- (void)removePropertyWithName:(NSString *)name {
+    if (name) {
+        [self.internalProperties removeObjectForKey:name];
+    }
+}
+
+/// MARK: Page Title Property
+
+- (NSString *)titlePropertyName {
+    for (NSString *name in self.properties.allKeys) {
+        NotionProperty *property = self.properties[name];
+        if (property.type == NotionPropertyTypeTitle) {
+            return name;
+        }
+    }
+    
+    return nil;
+}
+
+- (NotionTitleProperty *)titleProperty {
+    NSString *titlePropertyName = self.titlePropertyName;
+    if (titlePropertyName) {
+        return [self.internalProperties objectForKey:titlePropertyName];
+    }
+    
+    return nil;
+}
+
+- (void)setTitleProperty:(NotionTitleProperty *)titleProperty {
+    if (titleProperty && titleProperty.name) {
+        NSString *titlePropertyName = self.titlePropertyName;
+        if (titlePropertyName) {
+            [self.internalProperties removeObjectForKey:titlePropertyName];
+        }
+        
+        [self.internalProperties setObject:titleProperty forKey:titleProperty.name];
+    }
 }
 
 - (NSString *)title {
@@ -96,20 +170,11 @@
     return nil;
 }
 
-/// MARK: Debug
-
-- (NSString *)description {
-    NSDictionary *info = @{
-        @"id": self.id,
-        @"title": self.title ?: @"nil",
-        @"createdTimeDate": self.createdTime ?: @"nil",
-        @"lastEditedTimeDate": self.lastEditedTime ?: @"nil"
-    };
-    
-    NSString *description = [super description];
-    description = [description stringByAppendingFormat:@" %@", info];
-    
-    return description;
+- (void)setTitle:(NSString *)title {
+    NotionTitleProperty *titleProperty = self.titleProperty;
+    if (titleProperty) {
+        titleProperty.parts = @[[NotionRichText textWithContent:title]];
+    }
 }
 
 /// MARK: Serialize
@@ -140,6 +205,22 @@
     dictionary[@"properties"] = properties;
     
     return dictionary;
+}
+
+/// MARK: Debug
+
+- (NSString *)description {
+    NSDictionary *info = @{
+        @"id": self.id,
+        @"title": self.title ?: @"nil",
+        @"createdTimeDate": self.createdTime ?: @"nil",
+        @"lastEditedTimeDate": self.lastEditedTime ?: @"nil"
+    };
+    
+    NSString *description = [super description];
+    description = [description stringByAppendingFormat:@" %@", info];
+    
+    return description;
 }
 
 @end
