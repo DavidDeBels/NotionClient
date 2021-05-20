@@ -22,17 +22,20 @@
 /// MARK: Init
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary {
-    NSString *objectId = [dictionary stringForKeyOrNil:@"id"];
-    if (!objectId) {
-        return nil;
-    }
-    
     self = [self init];
     if (self) {
-        _id = objectId;
+        _id = [dictionary stringForKeyOrNil:@"id"];
     }
     
     return self;
+}
+
+- (id)copyWithZone:(NSZone *)zone {
+    NSMutableDictionary *serialized = self.serializedObject;
+    //[serialized removeObjectForKey:@"id"];
+    
+    NotionObject *object = [[self.class allocWithZone:zone] initWithDictionary:serialized];
+    return object;
 }
 
 /// MARK: Serialize

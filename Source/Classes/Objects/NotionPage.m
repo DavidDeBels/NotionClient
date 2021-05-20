@@ -84,6 +84,19 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    NSMutableDictionary *copiedProperties = [NSMutableDictionary new];
+    for (NSString *name in self.properties.allKeys) {
+        NotionProperty *property = self.properties[name];
+        [copiedProperties setObject:[property copy] forKey:name];
+    }
+    
+    NotionPage *copiedPage = [super copyWithZone:zone];
+    copiedPage.properties = copiedProperties;
+    
+    return copiedPage;
+}
+
 - (void)parseProperties:(NSDictionary *)dictionary {
     NSMutableDictionary *properties = [NSMutableDictionary new];
     

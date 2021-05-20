@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// MARK: - NotionProperty Interface
 
-@interface NotionProperty : NSObject
+@interface NotionProperty : NSObject <NSCopying>
 
 /// MARK: Properties
 

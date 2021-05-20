@@ -22,6 +22,14 @@
     return self;
 }
 
+- (id)copyWithZone:(NSZone *)zone {
+    NSMutableDictionary *serialized = self.serializedObject;
+    //[serialized removeObjectForKey:@"id"];
+    
+    NotionProperty *property = [[self.class allocWithZone:zone] initWithName:self.name dictionary:serialized];
+    return property;
+}
+
 /// MARK: Serialize
 
 - (NSMutableDictionary *)serializedObject {
