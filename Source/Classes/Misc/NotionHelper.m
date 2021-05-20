@@ -176,7 +176,7 @@
 + (Class)classForPropertyType:(NSString *)propertyType {
     if ([propertyType isEqualToString:@"title"]) {
         return NotionTitleProperty.class;
-    } else if ([propertyType isEqualToString:@"text"]) {
+    } else if ([propertyType isEqualToString:@"rich_text"]) {
         return NotionTextProperty.class;
     } else if ([propertyType isEqualToString:@"number"]) {
         return NotionNumberProperty.class;
