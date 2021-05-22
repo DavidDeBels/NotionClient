@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		630D132A2656E02D00A9F7CC /* NotionSort.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D13282656E02D00A9F7CC /* NotionSort.h */; };
+		630D132B2656E02D00A9F7CC /* NotionSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D13292656E02D00A9F7CC /* NotionSort.m */; };
+		630D132F2656E14800A9F7CC /* NotionSerializable.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D132E2656E14800A9F7CC /* NotionSerializable.h */; };
+		630D141D26590A8E00A9F7CC /* NotionFilterGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D140B26590A8D00A9F7CC /* NotionFilterGroup.m */; };
+		630D141E26590A8E00A9F7CC /* NotionFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D140C26590A8D00A9F7CC /* NotionFilter.h */; };
+		630D141F26590A8E00A9F7CC /* NotionSelectFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D140D26590A8D00A9F7CC /* NotionSelectFilter.h */; };
+		630D142026590A8E00A9F7CC /* NotionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D140E26590A8D00A9F7CC /* NotionFilter.m */; };
+		630D142126590A8E00A9F7CC /* NotionSelectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D140F26590A8D00A9F7CC /* NotionSelectFilter.m */; };
+		630D142226590A8E00A9F7CC /* NotionPersonFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D141026590A8D00A9F7CC /* NotionPersonFilter.m */; };
+		630D142326590A8E00A9F7CC /* NotionPersonFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141126590A8D00A9F7CC /* NotionPersonFilter.h */; };
+		630D142426590A8E00A9F7CC /* NotionTextFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141226590A8D00A9F7CC /* NotionTextFilter.h */; };
+		630D142526590A8E00A9F7CC /* NotionFilterGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141326590A8D00A9F7CC /* NotionFilterGroup.h */; };
+		630D142626590A8E00A9F7CC /* NotionCheckboxFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D141426590A8D00A9F7CC /* NotionCheckboxFilter.m */; };
+		630D142726590A8E00A9F7CC /* NotionNumberFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141526590A8D00A9F7CC /* NotionNumberFilter.h */; };
+		630D142826590A8E00A9F7CC /* NotionMultiSelectFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141626590A8D00A9F7CC /* NotionMultiSelectFilter.h */; };
+		630D142926590A8E00A9F7CC /* NotionNumberFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D141726590A8D00A9F7CC /* NotionNumberFilter.m */; };
+		630D142A26590A8E00A9F7CC /* NotionCheckboxFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141826590A8D00A9F7CC /* NotionCheckboxFilter.h */; };
+		630D142B26590A8E00A9F7CC /* NotionRelationFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D141926590A8D00A9F7CC /* NotionRelationFilter.m */; };
+		630D142C26590A8E00A9F7CC /* NotionTextFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D141A26590A8D00A9F7CC /* NotionTextFilter.m */; };
+		630D142D26590A8E00A9F7CC /* NotionMultiSelectFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D141B26590A8E00A9F7CC /* NotionMultiSelectFilter.m */; };
+		630D142E26590A8E00A9F7CC /* NotionRelationFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D141C26590A8E00A9F7CC /* NotionRelationFilter.h */; };
+		630D1439265912FB00A9F7CC /* NotionFileFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 630D1437265912FB00A9F7CC /* NotionFileFilter.m */; };
+		630D143A265912FB00A9F7CC /* NotionFileFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 630D1438265912FB00A9F7CC /* NotionFileFilter.h */; };
 		63EFDF64264E6565000C12BB /* NotionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EFDF62264E6564000C12BB /* NotionClient.m */; };
 		63EFDF70264E6A1A000C12BB /* NSDictionary+NotionClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 63EFDF6E264E6A1A000C12BB /* NSDictionary+NotionClient.h */; };
 		63EFDF71264E6A1A000C12BB /* NSDictionary+NotionClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 63EFDF6F264E6A1A000C12BB /* NSDictionary+NotionClient.m */; };
@@ -55,6 +78,29 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		630D13282656E02D00A9F7CC /* NotionSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionSort.h; sourceTree = "<group>"; };
+		630D13292656E02D00A9F7CC /* NotionSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionSort.m; sourceTree = "<group>"; };
+		630D132E2656E14800A9F7CC /* NotionSerializable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionSerializable.h; sourceTree = "<group>"; };
+		630D140B26590A8D00A9F7CC /* NotionFilterGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionFilterGroup.m; sourceTree = "<group>"; };
+		630D140C26590A8D00A9F7CC /* NotionFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionFilter.h; sourceTree = "<group>"; };
+		630D140D26590A8D00A9F7CC /* NotionSelectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionSelectFilter.h; sourceTree = "<group>"; };
+		630D140E26590A8D00A9F7CC /* NotionFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionFilter.m; sourceTree = "<group>"; };
+		630D140F26590A8D00A9F7CC /* NotionSelectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionSelectFilter.m; sourceTree = "<group>"; };
+		630D141026590A8D00A9F7CC /* NotionPersonFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionPersonFilter.m; sourceTree = "<group>"; };
+		630D141126590A8D00A9F7CC /* NotionPersonFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionPersonFilter.h; sourceTree = "<group>"; };
+		630D141226590A8D00A9F7CC /* NotionTextFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionTextFilter.h; sourceTree = "<group>"; };
+		630D141326590A8D00A9F7CC /* NotionFilterGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionFilterGroup.h; sourceTree = "<group>"; };
+		630D141426590A8D00A9F7CC /* NotionCheckboxFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionCheckboxFilter.m; sourceTree = "<group>"; };
+		630D141526590A8D00A9F7CC /* NotionNumberFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionNumberFilter.h; sourceTree = "<group>"; };
+		630D141626590A8D00A9F7CC /* NotionMultiSelectFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionMultiSelectFilter.h; sourceTree = "<group>"; };
+		630D141726590A8D00A9F7CC /* NotionNumberFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionNumberFilter.m; sourceTree = "<group>"; };
+		630D141826590A8D00A9F7CC /* NotionCheckboxFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionCheckboxFilter.h; sourceTree = "<group>"; };
+		630D141926590A8D00A9F7CC /* NotionRelationFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionRelationFilter.m; sourceTree = "<group>"; };
+		630D141A26590A8D00A9F7CC /* NotionTextFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionTextFilter.m; sourceTree = "<group>"; };
+		630D141B26590A8E00A9F7CC /* NotionMultiSelectFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionMultiSelectFilter.m; sourceTree = "<group>"; };
+		630D141C26590A8E00A9F7CC /* NotionRelationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionRelationFilter.h; sourceTree = "<group>"; };
+		630D1437265912FB00A9F7CC /* NotionFileFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotionFileFilter.m; sourceTree = "<group>"; };
+		630D1438265912FB00A9F7CC /* NotionFileFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotionFileFilter.h; sourceTree = "<group>"; };
 		63EFDF2A264E5FD3000C12BB /* NotionClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotionClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EFDF2D264E5FD3000C12BB /* NotionClient-iOS-Framework.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NotionClient-iOS-Framework.plist"; sourceTree = "<group>"; };
 		63EFDF61264E6564000C12BB /* NotionClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotionClient.h; sourceTree = "<group>"; };
@@ -116,6 +162,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		630D13272656E02D00A9F7CC /* Query */ = {
+			isa = PBXGroup;
+			children = (
+				630D140C26590A8D00A9F7CC /* NotionFilter.h */,
+				630D140E26590A8D00A9F7CC /* NotionFilter.m */,
+				630D141326590A8D00A9F7CC /* NotionFilterGroup.h */,
+				630D140B26590A8D00A9F7CC /* NotionFilterGroup.m */,
+				630D141226590A8D00A9F7CC /* NotionTextFilter.h */,
+				630D141A26590A8D00A9F7CC /* NotionTextFilter.m */,
+				630D141526590A8D00A9F7CC /* NotionNumberFilter.h */,
+				630D141726590A8D00A9F7CC /* NotionNumberFilter.m */,
+				630D141826590A8D00A9F7CC /* NotionCheckboxFilter.h */,
+				630D141426590A8D00A9F7CC /* NotionCheckboxFilter.m */,
+				630D140D26590A8D00A9F7CC /* NotionSelectFilter.h */,
+				630D140F26590A8D00A9F7CC /* NotionSelectFilter.m */,
+				630D141626590A8D00A9F7CC /* NotionMultiSelectFilter.h */,
+				630D141B26590A8E00A9F7CC /* NotionMultiSelectFilter.m */,
+				630D141126590A8D00A9F7CC /* NotionPersonFilter.h */,
+				630D141026590A8D00A9F7CC /* NotionPersonFilter.m */,
+				630D141C26590A8E00A9F7CC /* NotionRelationFilter.h */,
+				630D141926590A8D00A9F7CC /* NotionRelationFilter.m */,
+				630D1438265912FB00A9F7CC /* NotionFileFilter.h */,
+				630D1437265912FB00A9F7CC /* NotionFileFilter.m */,
+				630D13282656E02D00A9F7CC /* NotionSort.h */,
+				630D13292656E02D00A9F7CC /* NotionSort.m */,
+			);
+			path = Query;
+			sourceTree = "<group>";
+		};
 		63EFDF0F264E5F3B000C12BB = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +232,7 @@
 				63EFDF7E264E6C6C000C12BB /* Objects */,
 				63EFDFA6264E93E7000C12BB /* Properties */,
 				63EFE02926500408000C12BB /* RichText */,
+				630D13272656E02D00A9F7CC /* Query */,
 				63EFE04C26503373000C12BB /* Misc */,
 				63EFDF61264E6564000C12BB /* NotionClient.h */,
 				63EFDF62264E6564000C12BB /* NotionClient.m */,
@@ -236,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				63EFDFDC264EBBB7000C12BB /* NotionTypes.h */,
+				630D132E2656E14800A9F7CC /* NotionSerializable.h */,
 				63EFDFB1264EA60F000C12BB /* NotionHelper.h */,
 				63EFDFB2264EA60F000C12BB /* NotionHelper.m */,
 			);
@@ -252,22 +329,34 @@
 				63EFDFE1264EC701000C12BB /* NotionDateProperty.h in Headers */,
 				63EFE002264F0824000C12BB /* NotionEmailProperty.h in Headers */,
 				63EFDFF0264EE969000C12BB /* NotionCheckboxProperty.h in Headers */,
+				630D142526590A8E00A9F7CC /* NotionFilterGroup.h in Headers */,
 				63EFE047265027A2000C12BB /* NotionTextProperty.h in Headers */,
 				63EFDFCC264EB4D4000C12BB /* NotionMultiSelectProperty.h in Headers */,
 				63EFDFF9264F06E1000C12BB /* NotionURLProperty.h in Headers */,
+				630D142726590A8E00A9F7CC /* NotionNumberFilter.h in Headers */,
 				63EFDFEB264EE569000C12BB /* Notion.h in Headers */,
 				63EFDF8A264E6D9A000C12BB /* NotionObject.h in Headers */,
+				630D143A265912FB00A9F7CC /* NotionFileFilter.h in Headers */,
 				63EFE03726500BE6000C12BB /* NotionTitleProperty.h in Headers */,
+				630D132A2656E02D00A9F7CC /* NotionSort.h in Headers */,
 				63EFDF81264E6C7F000C12BB /* NotionUser.h in Headers */,
 				63EFDFBC264EABB1000C12BB /* NotionSelectProperty.h in Headers */,
+				630D142A26590A8E00A9F7CC /* NotionCheckboxFilter.h in Headers */,
 				63EFDFA1264E9359000C12BB /* NotionProperty.h in Headers */,
 				63EFE010264F0A35000C12BB /* NotionPhoneProperty.h in Headers */,
 				63EFE019264FBCD6000C12BB /* NotionPersonProperty.h in Headers */,
+				630D142426590A8E00A9F7CC /* NotionTextFilter.h in Headers */,
+				630D142E26590A8E00A9F7CC /* NotionRelationFilter.h in Headers */,
 				63EFE024264FD340000C12BB /* NotionRelationProperty.h in Headers */,
 				63EFDFB3264EA60F000C12BB /* NotionHelper.h in Headers */,
+				630D132F2656E14800A9F7CC /* NotionSerializable.h in Headers */,
+				630D142326590A8E00A9F7CC /* NotionPersonFilter.h in Headers */,
+				630D141F26590A8E00A9F7CC /* NotionSelectFilter.h in Headers */,
+				630D142826590A8E00A9F7CC /* NotionMultiSelectFilter.h in Headers */,
 				63EFE04026501DDB000C12BB /* NotionRichText.h in Headers */,
 				63EFDF70264E6A1A000C12BB /* NSDictionary+NotionClient.h in Headers */,
 				63EFDFD5264EBA31000C12BB /* NotionNumberProperty.h in Headers */,
+				630D141E26590A8E00A9F7CC /* NotionFilter.h in Headers */,
 				63EFDF9A264E9008000C12BB /* NotionPage.h in Headers */,
 				63EFE02C2650041B000C12BB /* NotionTextPart.h in Headers */,
 				63EFDFC5264EAE64000C12BB /* NotionSelectOption.h in Headers */,
@@ -342,19 +431,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630D141D26590A8E00A9F7CC /* NotionFilterGroup.m in Sources */,
 				63EFDFB4264EA60F000C12BB /* NotionHelper.m in Sources */,
 				63EFE02D2650041B000C12BB /* NotionTextPart.m in Sources */,
 				63EFDFBD264EABB1000C12BB /* NotionSelectProperty.m in Sources */,
 				63EFE01A264FBCD6000C12BB /* NotionPersonProperty.m in Sources */,
+				630D142626590A8E00A9F7CC /* NotionCheckboxFilter.m in Sources */,
 				63EFDF71264E6A1A000C12BB /* NSDictionary+NotionClient.m in Sources */,
 				63EFDFA2264E9359000C12BB /* NotionProperty.m in Sources */,
 				63EFE03526500BE6000C12BB /* NotionTitleProperty.m in Sources */,
 				63EFE000264F0824000C12BB /* NotionEmailProperty.m in Sources */,
+				630D142B26590A8E00A9F7CC /* NotionRelationFilter.m in Sources */,
 				63EFDF64264E6565000C12BB /* NotionClient.m in Sources */,
+				630D142126590A8E00A9F7CC /* NotionSelectFilter.m in Sources */,
+				630D1439265912FB00A9F7CC /* NotionFileFilter.m in Sources */,
 				63EFDFD6264EBA31000C12BB /* NotionNumberProperty.m in Sources */,
+				630D142926590A8E00A9F7CC /* NotionNumberFilter.m in Sources */,
 				63EFDFE2264EC701000C12BB /* NotionDateProperty.m in Sources */,
 				63EFDFF1264EE969000C12BB /* NotionCheckboxProperty.m in Sources */,
 				63EFDFFA264F06E1000C12BB /* NotionURLProperty.m in Sources */,
+				630D142026590A8E00A9F7CC /* NotionFilter.m in Sources */,
 				63EFDF82264E6C7F000C12BB /* NotionUser.m in Sources */,
 				63EFDF8B264E6D9A000C12BB /* NotionObject.m in Sources */,
 				63EFE025264FD340000C12BB /* NotionRelationProperty.m in Sources */,
@@ -363,7 +459,11 @@
 				63EFDFCD264EB4D4000C12BB /* NotionMultiSelectProperty.m in Sources */,
 				63EFDFC6264EAE64000C12BB /* NotionSelectOption.m in Sources */,
 				63EFE04126501DDB000C12BB /* NotionRichText.m in Sources */,
+				630D132B2656E02D00A9F7CC /* NotionSort.m in Sources */,
+				630D142D26590A8E00A9F7CC /* NotionMultiSelectFilter.m in Sources */,
+				630D142226590A8E00A9F7CC /* NotionPersonFilter.m in Sources */,
 				63EFE011264F0A35000C12BB /* NotionPhoneProperty.m in Sources */,
+				630D142C26590A8E00A9F7CC /* NotionTextFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

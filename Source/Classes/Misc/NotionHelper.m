@@ -372,6 +372,43 @@
     }
 }
 
+/// MARK: Filter Type
+
++ (NSString *)stringForFilterType:(NotionFilterType)filterType {
+    switch (filterType) {
+        case NotionFilterTypeIsEmpty:
+            return @"is_empty";
+        case NotionFilterTypeIsNotEmpty:
+            return @"is_not_empty";
+        case NotionFilterTypeGroupOr:
+            return @"or";
+        case NotionFilterTypeGroupAnd:
+            return @"and";
+        case NotionFilterTypeEquals:
+            return @"equals";
+        case NotionFilterTypeDoesNotEqual:
+            return @"does_not_equal";
+        case NotionFilterTypeContains:
+            return @"contains";
+        case NotionFilterTypeDoesNotContain:
+            return @"does_not_contain";
+        case NotionFilterTypeStartsWith:
+            return @"starts_with";
+        case NotionFilterTypeEndsWith:
+            return @"ends_with";
+        case NotionFilterTypeGreaterThan:
+            return @"greater_than";
+        case NotionFilterTypeGreaterThanOrEqualTo:
+            return @"greater_than_or_equal_to";
+        case NotionFilterTypeLessThan:
+            return @"less_than";
+        case NotionFilterTypeLessThanOrEqualTo:
+            return @"less_than_or_equal_to";
+        default:
+            return nil;
+    }
+}
+
 /// MARK: Cached Formatters
 
 static NSISO8601DateFormatter *_dateFormatter = nil;

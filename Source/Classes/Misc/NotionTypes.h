@@ -84,3 +84,32 @@ typedef NS_ENUM(NSUInteger, NotionNumberFormat) {
     NotionNumberFormatYuan
 };
 
+typedef NS_ENUM(NSUInteger, NotionSortDirection) {
+    NotionSortDirectionAscending,
+    NotionSortDirectionDescending
+};
+
+typedef NS_ENUM(NSUInteger, NotionSortType) {
+    NotionSortTypeProperty,
+    NotionSortTypeCreatedTime,
+    NotionSortTypeLastEditedTime
+};
+
+typedef NS_ENUM(NSUInteger, NotionFilterType) {
+    NotionFilterTypeIsEmpty,
+    NotionFilterTypeIsNotEmpty,
+    NotionFilterTypeEquals,
+    NotionFilterTypeDoesNotEqual,
+    NotionFilterTypeContains,
+    NotionFilterTypeDoesNotContain,
+    NotionFilterTypeStartsWith,
+    NotionFilterTypeEndsWith,
+    NotionFilterTypeGreaterThan,
+    NotionFilterTypeGreaterThanOrEqualTo,
+    NotionFilterTypeLessThan,
+    NotionFilterTypeLessThanOrEqualTo,
+    NotionFilterTypeGroupAnd,
+    NotionFilterTypeGroupOr
+};
+
+

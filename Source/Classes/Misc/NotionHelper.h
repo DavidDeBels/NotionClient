@@ -64,6 +64,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)stringForTextPartType:(NotionTextPartType)richTextType;
 
+/// MARK: Filter Type
+
++ (NSString *)stringForFilterType:(NotionFilterType)filterType;
+
 // MARK: Cached Formatters
 
 + (NSNumberFormatter *)numberFormatter;

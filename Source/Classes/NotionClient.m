@@ -14,6 +14,9 @@
 #import "NotionPage.h"
 #import "NotionUser.h"
 
+#import "NotionFilter.h"
+#import "NotionSort.h"
+
 #import "NSDictionary+NotionClient.h"
 
 NSString * const NotionClientBaseUrl = @"https://api.notion.com/v1";
@@ -52,11 +55,11 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
 
 /// MARK: Users
 
-- (void)fetchAllUsersWithCompletion:(void(^)(NSArray<NotionUser *> *results, NSError *error))completion {
-    [self fetchAllUsersWithCompletion:completion startCursor:nil appendPreviousResults:nil];
+- (void)getUsersWithCompletion:(void(^)(NSArray<NotionUser *> *users, NSError *error))completion {
+    [self getUsersWithCompletion:completion startCursor:nil appendPreviousResults:nil];
 }
 
-- (void)fetchAllUsersWithCompletion:(void(^)(NSArray<NotionUser *> *results, NSError *error))completion startCursor:(nullable NSString *)startCursor appendPreviousResults:(nullable NSArray *)previousResults {
+- (void)getUsersWithCompletion:(void(^)(NSArray<NotionUser *> *users, NSError *error))completion startCursor:(nullable NSString *)startCursor appendPreviousResults:(nullable NSArray *)previousResults {
     // Endpoint path
     NSString *path = @"/users";
     
@@ -86,7 +89,7 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
         // If there is more content get it, if not parse results and call completion
         NSString *nextCursor = [responseBody stringForKeyOrNil:@"next_cursor"];
         if (nextCursor) {
-            [weakSelf fetchAllUsersWithCompletion:completion startCursor:nextCursor appendPreviousResults:results];
+            [weakSelf getUsersWithCompletion:completion startCursor:nextCursor appendPreviousResults:results];
         } else {
             NSArray *objects = [self parseListResults:results];
             completion(objects, nil);
@@ -96,11 +99,15 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
 
 /// MARK: Query Database
 
-- (void)queryDatabaseWithId:(NSString *)databaseId completion:(void(^)(NSArray<NotionPage *> *results, NSError *error))completion {
-    [self queryDatabaseWithId:databaseId completion:completion startCursor:nil appendPreviousResults:nil];
+- (void)queryDatabaseWithId:(NSString *)databaseId completion:(void(^)(NSArray<NotionPage *> *pages, NSError *error))completion {
+    [self queryDatabaseWithId:databaseId filter:nil sorts:nil completion:completion startCursor:nil appendPreviousResults:nil];
 }
 
-- (void)queryDatabaseWithId:(NSString *)databaseId completion:(void(^)(NSArray<NotionPage *> *results, NSError *error))completion startCursor:(nullable NSString *)startCursor appendPreviousResults:(nullable NSArray *)previousResults {
+- (void)queryDatabaseWithId:(NSString *)databaseId filter:(NotionFilter *)filter sorts:(NSArray<NotionSort *> *)sorts completion:(void(^)(NSArray<NotionPage *> *pages, NSError *error))completion {
+    [self queryDatabaseWithId:databaseId filter:filter sorts:sorts completion:completion startCursor:nil appendPreviousResults:nil];
+}
+
+- (void)queryDatabaseWithId:(NSString *)databaseId filter:(NotionFilter *)filter sorts:(NSArray<NotionSort *> *)sorts completion:(void(^)(NSArray<NotionPage *> *pages, NSError *error))completion startCursor:(nullable NSString *)startCursor appendPreviousResults:(nullable NSArray *)previousResults {
     // Endpoint path
     NSString *path = [NSString stringWithFormat:@"/databases/%@/query", databaseId];
     
@@ -113,6 +120,21 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
     
     // Request Body
     NSMutableDictionary *body = [NSMutableDictionary new];
+    
+    // Add filters
+    if (filter) {
+        body[@"filter"] = filter.serializedObject;
+    }
+    
+    // Add sorting
+    if (sorts.count > 0) {
+        NSMutableArray *serializedSorts = [NSMutableArray new];
+        for (NotionSort *sort in sorts) {
+            [serializedSorts addObject:sort.serializedObject];
+        }
+        
+        body[@"sorts"] = serializedSorts;
+    }
     
     // Create & perform request
     NSMutableURLRequest *request = [self requestForMethod:@"POST" path:path query:queryParameters];
@@ -134,7 +156,7 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
         // If there is more content get it, if not parse results
         NSString *nextCursor = [responseBody stringForKeyOrNil:@"next_cursor"];
         if (nextCursor) {
-            [weakSelf queryDatabaseWithId:databaseId completion:completion startCursor:nextCursor appendPreviousResults:results];
+            [weakSelf queryDatabaseWithId:databaseId filter:filter sorts:sorts completion:completion startCursor:nextCursor appendPreviousResults:results];
         } else {
             NSArray *objects = [self parseListResults:results];
             completion(objects, nil);

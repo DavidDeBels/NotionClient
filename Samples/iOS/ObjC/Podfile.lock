@@ -1,5 +1,5 @@
 PODS:
-  - NotionClient (0.0.1)
+  - NotionClient (0.1.0)
 
 DEPENDENCIES:
   - NotionClient (from `../../../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../../../"
 
 SPEC CHECKSUMS:
-  NotionClient: db0cf2cd7ba2339e76f74e5d249a996916e0d5e0
+  NotionClient: d7e44e299f2360e0ac83f51b838a5af2f8e72984
 
 PODFILE CHECKSUM: 4f77da57205618ef7c458561854e6de444e217b7
 
