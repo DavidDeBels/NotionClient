@@ -64,6 +64,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)stringForTextPartType:(NotionTextPartType)richTextType;
 
+/// MARK: Formula Type
+
++ (NotionFormulaType)formulaTypeForString:(NSString *)string;
+
++ (NSString *)stringForFormulaType:(NotionFormulaType)formulaType;
+
 /// MARK: Filter Type
 
 + (NSString *)stringForFilterType:(NotionFilterType)filterType;

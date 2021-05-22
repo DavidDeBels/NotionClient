@@ -67,7 +67,9 @@ typedef NS_ENUM(NSUInteger, NotionPropertyType) {
     NotionPropertyTypeURL,
     NotionPropertyTypeEmail,
     NotionPropertyTypePhone,
-    NotionPropertyTypeRelation
+    NotionPropertyTypeRelation,
+    NotionPropertyTypeFormula,
+    NotionPropertyTypeRollup
 };
 
 typedef NS_ENUM(NSUInteger, NotionNumberFormat) {
@@ -82,6 +84,13 @@ typedef NS_ENUM(NSUInteger, NotionNumberFormat) {
     NotionNumberFormatRupee,
     NotionNumberFormatWon,
     NotionNumberFormatYuan
+};
+
+typedef NS_ENUM(NSUInteger, NotionFormulaType) {
+    NotionFormulaTypeText,
+    NotionFormulaTypeNumber,
+    NotionFormulaTypeDate,
+    NotionFormulaTypeBoolean
 };
 
 typedef NS_ENUM(NSUInteger, NotionSortDirection) {

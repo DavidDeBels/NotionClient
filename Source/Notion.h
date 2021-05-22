@@ -39,6 +39,7 @@ FOUNDATION_EXPORT const unsigned char NotionClientVersionString[];
 #import <NotionClient/NotionEmailProperty.h>
 #import <NotionClient/NotionPhoneProperty.h>
 #import <NotionClient/NotionRelationProperty.h>
+#import <NotionClient/NotionFormulaProperty.h>
 
 // Rich Text
 #import <NotionClient/NotionRichText.h>

@@ -22,6 +22,7 @@
 #import "NotionEmailProperty.h"
 #import "NotionPhoneProperty.h"
 #import "NotionRelationProperty.h"
+#import "NotionFormulaProperty.h"
 
 /// MARK: - NotionHelper Implementation
 
@@ -137,6 +138,10 @@
         return NotionPropertyTypePhone;
     } else if ([string isEqualToString:@"relation"]) {
         return NotionPropertyTypeRelation;
+    } else if ([string isEqualToString:@"formula"]) {
+        return NotionPropertyTypeFormula;
+    } else if ([string isEqualToString:@"rollup"]) {
+        return NotionPropertyTypeRollup;
     }
     
     return NotionPropertyTypeUnknown;
@@ -166,6 +171,10 @@
             return @"phone_number";
         case NotionPropertyTypeRelation:
             return @"relation";
+        case NotionPropertyTypeFormula:
+            return @"formula";
+        case NotionPropertyTypeRollup:
+            return @"rollup";
         default:
             return nil;
     }
@@ -198,6 +207,8 @@
         return NotionPhoneProperty.class;
     } else if ([propertyType isEqualToString:@"relation"]) {
         return NotionRelationProperty.class;
+    } else if ([propertyType isEqualToString:@"formula"]) {
+        return NotionFormulaProperty.class;
     }
 
     return nil;
@@ -369,6 +380,37 @@
             return @"equation";
         default:
             return @"text";
+    }
+}
+
+/// MARK: Formula Type
+
++ (NotionFormulaType)formulaTypeForString:(NSString *)string {
+    if ([string isEqualToString:@"string"]) {
+        return NotionFormulaTypeText;
+    } else if ([string isEqualToString:@"number"]) {
+        return NotionFormulaTypeNumber;
+    } else if ([string isEqualToString:@"date"]) {
+        return NotionFormulaTypeDate;
+    } else if ([string isEqualToString:@"boolean"]) {
+        return NotionFormulaTypeBoolean;
+    }
+    
+    return NotionFormulaTypeText;
+}
+
++ (NSString *)stringForFormulaType:(NotionFormulaType)formulaType {
+    switch (formulaType) {
+        case NotionFormulaTypeText:
+            return @"string";
+        case NotionFormulaTypeNumber:
+            return @"number";
+        case NotionFormulaTypeDate:
+            return @"date";
+        case NotionFormulaTypeBoolean:
+            return @"boolean";
+        default:
+            return @"string";
     }
 }
 
