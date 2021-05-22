@@ -47,7 +47,7 @@
     
     NSString *key = [NotionHelper stringForFilterType:self.type];
     if (self.type == NotionFilterTypeIsEmpty || self.type == NotionFilterTypeIsNotEmpty) {
-        dictionary[@"select"] = @{
+        dictionary[@"files"] = @{
             key: @YES
         };
     }
