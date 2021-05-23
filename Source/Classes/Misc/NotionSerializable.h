@@ -1,6 +1,6 @@
 //
 //  NotionSerializable.h
-//  NotionClientDev
+//  NotionClient
 //
 //  Created by David De Bels on 20/05/2021.
 //

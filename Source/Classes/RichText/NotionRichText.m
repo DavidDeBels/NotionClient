@@ -14,7 +14,7 @@
 @synthesize type = _type;
 @synthesize URL = _URL;
 
-/// MARK: Init
+/// MARK: Convenience Init
 
 + (NotionRichText *)textWithContent:(NSString *)content {
     return [self textWithContent:content URL:nil color:NotionColorDefault bold:NO italic:NO underline:NO strikethrough:NO code:NO];
@@ -46,6 +46,8 @@
     
     return richText;
 }
+
+/// MARK: Init
 
 - (instancetype)init {
     self  = [super init];

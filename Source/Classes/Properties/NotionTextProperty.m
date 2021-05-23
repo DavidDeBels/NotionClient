@@ -70,9 +70,13 @@
         NSMutableArray *parts = [NSMutableArray new];
         
         NSArray *richTexts = [dictionary arrayForKeyOrNil:@"rich_text"];
-        for (NSDictionary *richText in richTexts) {
-            NotionTextPart *part = [[NotionTextPart alloc] initWithDictionary:richText];
-            [parts addObject:part];
+        for (NSDictionary *textPart in richTexts) {
+            NSString *type = [textPart stringForKeyOrNil:@"type"];
+            Class class = [NotionHelper classForTextPartType:type];
+            if (class) {
+                NotionTextPart *part = [[class alloc] initWithDictionary:textPart];
+                [parts addObject:part];
+            }
         }
         _parts = [parts copy];
     }
@@ -91,8 +95,9 @@
     return [title copy];
 }
 
-- (void)setTitle:(NSString *)title {
-    
+- (void)setText:(NSString *)text {
+    NotionRichText *richText = [NotionRichText textWithContent:text];
+    self.parts = @[richText];
 }
 
 /// MARK: Serialize

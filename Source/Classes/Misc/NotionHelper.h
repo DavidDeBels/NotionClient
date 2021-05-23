@@ -10,6 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// MARK: - NotionHelper Interface
+
 @interface NotionHelper : NSObject
 
 /// MARK: Parent Types
@@ -50,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable NSDate *)dateFromString:(NSString *)string;
 
-+ (NSString *)stringFromDate:(NSDate *)date;
++ (NSString *)stringFromDate:(NSDate *)date includeTime:(BOOL)includeTime;
 
 /// MARK: Color
 
@@ -63,6 +65,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (NotionTextPartType)textPartTypeForString:(NSString *)string;
 
 + (NSString *)stringForTextPartType:(NotionTextPartType)richTextType;
+
++ (Class)classForTextPartType:(NSString *)textPartType;
+
+/// MARK: Mention Type
+
++ (NotionMentionType)mentionTypeForString:(NSString *)string;
+
++ (NSString *)stringForMentionType:(NotionMentionType)mentionType;
 
 /// MARK: Formula Type
 
@@ -77,6 +87,10 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: Cached Formatters
 
 + (NSNumberFormatter *)numberFormatter;
+
+/// MARK: ID Helper
+
++ (NSString *)idToUUID:(NSString *)id;
 
 @end
 

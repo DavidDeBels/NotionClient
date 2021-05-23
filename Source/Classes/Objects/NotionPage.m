@@ -194,8 +194,8 @@
 
 - (NSMutableDictionary *)serializedObject {
     NSMutableDictionary *dictionary = [super serializedObject];
-    dictionary[@"created_time"] = [NotionHelper stringFromDate:self.createdTime];
-    dictionary[@"last_edited_time"] = [NotionHelper stringFromDate:self.lastEditedTime];
+    dictionary[@"created_time"] = [NotionHelper stringFromDate:self.createdTime includeTime:YES];
+    dictionary[@"last_edited_time"] = [NotionHelper stringFromDate:self.lastEditedTime includeTime:YES];
     dictionary[@"archived"] = @(self.archived);
     dictionary[@"parent"] = [NSMutableDictionary new];
     

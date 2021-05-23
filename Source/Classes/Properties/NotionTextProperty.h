@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readwrite) NSArray<NotionTextPart *> *parts;
 
-@property (nonatomic, copy, readwrite, nullable) NSString *title;
+@property (nonatomic, copy, readwrite, nullable) NSString *text;
 
 /// MARK: Init
 

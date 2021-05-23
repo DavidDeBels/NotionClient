@@ -93,6 +93,14 @@ typedef NS_ENUM(NSUInteger, NotionFormulaType) {
     NotionFormulaTypeBoolean
 };
 
+typedef NS_ENUM(NSUInteger, NotionMentionType) {
+    NotionMentionTypeUnknown,
+    NotionMentionTypeUser,
+    NotionMentionTypePage,
+    NotionMentionTypeDatabase,
+    NotionMentionTypeDate
+};
+
 typedef NS_ENUM(NSUInteger, NotionSortDirection) {
     NotionSortDirectionAscending,
     NotionSortDirectionDescending

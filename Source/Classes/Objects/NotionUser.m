@@ -11,7 +11,16 @@
 
 @implementation NotionUser
 
+@synthesize id = _id;
+
 @synthesize object = _object;
+
+/// MARK: Convenience Init
+
++ (NotionUser *)userWithId:(NSString *)userId type:(NotionUserType)type {
+    NotionUser *user = [[NotionUser alloc] initWithId:userId type:type];
+    return user;
+}
 
 /// MARK: Init
 
@@ -19,6 +28,16 @@
     self  = [super init];
     if (self) {
         _object = NotionObjectTypeUser;
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithId:(NSString *)id type:(NotionUserType)type {
+    self = [self init];
+    if (self) {
+        _id = id;
+        _type = type;
     }
     
     return self;

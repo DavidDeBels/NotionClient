@@ -54,9 +54,13 @@
         NSMutableArray *parts = [NSMutableArray new];
         
         NSArray *richTexts = [dictionary arrayForKeyOrNil:@"title"];
-        for (NSDictionary *richText in richTexts) {
-            NotionTextPart *part = [[NotionTextPart alloc] initWithDictionary:richText];
-            [parts addObject:part];
+        for (NSDictionary *textPart in richTexts) {
+            NSString *type = [textPart stringForKeyOrNil:@"type"];
+            Class class = [NotionHelper classForTextPartType:type];
+            if (class) {
+                NotionTextPart *part = [[class alloc] initWithDictionary:textPart];
+                [parts addObject:part];
+            }
         }
         _parts = [parts copy];
     }

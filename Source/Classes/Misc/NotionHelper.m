@@ -24,6 +24,10 @@
 #import "NotionRelationProperty.h"
 #import "NotionFormulaProperty.h"
 
+#import "NotionRichText.h"
+#import "NotionMention.h"
+#import "NotionEquation.h"
+
 /// MARK: - NotionHelper Implementation
 
 @implementation NotionHelper
@@ -372,14 +376,55 @@
     return NotionTextPartTypeText;
 }
 
-+ (NSString *)stringForTextPartType:(NotionTextPartType)richTextType {
-    switch (richTextType) {
++ (NSString *)stringForTextPartType:(NotionTextPartType)textPartType {
+    switch (textPartType) {
         case NotionTextPartTypeMention:
             return @"mention";
         case NotionTextPartTypeEquation:
             return @"equation";
         default:
             return @"text";
+    }
+}
+
++ (Class)classForTextPartType:(NSString *)textPartType {
+    if ([textPartType isEqualToString:@"mention"]) {
+        return NotionMention.class;
+    } else if ([textPartType isEqualToString:@"equation"]) {
+        return NotionEquation.class;
+    }
+    
+    return NotionRichText.class;
+}
+
+/// MARK: Mention Type
+
++ (NotionMentionType)mentionTypeForString:(NSString *)string {
+    if ([string isEqualToString:@"user"]) {
+        return NotionMentionTypeUser;
+    } else if ([string isEqualToString:@"page"]) {
+        return NotionMentionTypePage;
+    } else if ([string isEqualToString:@"database"]) {
+        return NotionMentionTypeDatabase;
+    } else if ([string isEqualToString:@"date"]) {
+        return NotionMentionTypeDate;
+    }
+    
+    return NotionMentionTypeUnknown;
+}
+
++ (NSString *)stringForMentionType:(NotionMentionType)mentionType {
+    switch (mentionType) {
+        case NotionMentionTypeUser:
+            return @"user";
+        case NotionMentionTypePage:
+            return @"page";
+        case NotionMentionTypeDatabase:
+            return @"database";
+        case NotionMentionTypeDate:
+            return @"date";
+        default:
+            return nil;
     }
 }
 
@@ -451,6 +496,21 @@
     }
 }
 
+/// MARK: ID Helper
+
++ (NSString *)idToUUID:(NSString *)id {
+    if (id.length == 32) {
+        NSMutableString *uuid = [id mutableCopy];
+        [uuid insertString:@"-" atIndex:20];
+        [uuid insertString:@"-" atIndex:16];
+        [uuid insertString:@"-" atIndex:12];
+        [uuid insertString:@"-" atIndex:8];
+        return [uuid copy];
+    }
+    
+    return id;
+}
+
 /// MARK: Cached Formatters
 
 static NSISO8601DateFormatter *_dateFormatter = nil;
@@ -463,11 +523,11 @@ static NSISO8601DateFormatter *_dateFormatter = nil;
     return _dateFormatter;
 }
 
-static NSISO8601DateFormatter *_shortDateFormatter = nil;
-+ (NSISO8601DateFormatter *)shortDateFormatter {
+static NSDateFormatter *_shortDateFormatter = nil;
++ (NSDateFormatter *)shortDateFormatter {
     if (!_shortDateFormatter) {
-        _shortDateFormatter = [[NSISO8601DateFormatter alloc] init];
-        _shortDateFormatter.formatOptions = NSISO8601DateFormatWithInternetDateTime;
+        _shortDateFormatter = [[NSDateFormatter alloc] init];
+        _shortDateFormatter.dateFormat = @"yyyy-MM-dd";
     }
     
     return _shortDateFormatter;
@@ -485,8 +545,12 @@ static NSISO8601DateFormatter *_shortDateFormatter = nil;
     return nil;
 }
 
-+ (NSString *)stringFromDate:(NSDate *)date {
-    return [[self dateFormatter] stringFromDate:date];
++ (NSString *)stringFromDate:(NSDate *)date includeTime:(BOOL)includeTime {
+    if (includeTime) {
+        return [[self dateFormatter] stringFromDate:date];
+    } else {
+        return [[self shortDateFormatter] stringFromDate:date];
+    }
 }
 
 static NSNumberFormatter *_numberFormatter = nil;

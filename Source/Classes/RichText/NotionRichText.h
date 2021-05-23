@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// MARK: - NotionTextPart Interface
+/// MARK: - NotionRichText Interface
 
 @interface NotionRichText : NotionTextPart
 
@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NotionRichText *)textWithContent:(nullable NSString *)content URL:(nullable NSURL *)URL NS_SWIFT_NAME(text(_:URL:));
 
-+ (NotionRichText *)textWithContent:(nullable NSString *)content color:(NotionColor)color  NS_SWIFT_NAME(text(_:color:));
++ (NotionRichText *)textWithContent:(nullable NSString *)content color:(NotionColor)color NS_SWIFT_NAME(text(_:color:));
 
 + (NotionRichText *)textWithContent:(nullable NSString *)content URL:(nullable NSURL *)URL color:(NotionColor)color NS_SWIFT_NAME(text(_:URL:color:));
 

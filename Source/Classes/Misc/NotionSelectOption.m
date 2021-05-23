@@ -53,7 +53,7 @@
     NSMutableDictionary *dictionary = [NSMutableDictionary new];
     dictionary[@"id"] = self.id;
     dictionary[@"name"] = self.name;
-    dictionary[@"color"] = [NotionHelper stringForColor:self.color];
+    dictionary[@"color"] = [[NotionHelper stringForColor:self.color] stringByReplacingOccurrencesOfString:@"_background" withString:@""];
    
     return dictionary;
 }

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "63EFDF29264E5FD3000C12BB"
-               BuildableName = "NotionClient_iOS.framework"
+               BuildableName = "NotionClient.framework"
                BlueprintName = "NotionClient-iOS"
                ReferencedContainer = "container:NotionClient.xcodeproj">
             </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63EFDF29264E5FD3000C12BB"
-            BuildableName = "NotionClient_iOS.framework"
+            BuildableName = "NotionClient.framework"
             BlueprintName = "NotionClient-iOS"
             ReferencedContainer = "container:NotionClient.xcodeproj">
          </BuildableReference>

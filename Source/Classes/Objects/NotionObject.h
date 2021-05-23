@@ -18,12 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// MARK: Properties
 
-@property (nonatomic, copy, readonly) NSString *id;
+@property (nonatomic, copy, readonly, nullable) NSString *id;
 @property (nonatomic, assign, readonly) NotionObjectType object;
 
 /// MARK: Init
 
-- (nullable instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
 /// MARK: Serialize
 

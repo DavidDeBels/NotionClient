@@ -58,7 +58,6 @@
     dictionary[@"plain_text"] = self.plainText;
     dictionary[@"href"] = self.URL ? self.URL.absoluteString : NSNull.null;
     
-    
     NSMutableDictionary *annotations = [NSMutableDictionary new];
     annotations[@"color"] = [NotionHelper stringForColor:self.color];
     if (self.bold) {
@@ -77,17 +76,6 @@
         annotations[@"code"] = @YES;
     }
     dictionary[@"annotations"] = annotations;
-    
-    /*
-    dictionary[@"annotations"] = @{
-        @"bold": @(self.bold),
-        @"italic": @(self.italic),
-        @"strikethrough": @(self.strikethrough),
-        @"underline": @(self.underline),
-        @"code": @(self.code),
-        @"color": [NotionHelper stringForColor:self.color]
-    };
-     */
    
     return dictionary;
 }

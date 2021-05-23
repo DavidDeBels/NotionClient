@@ -43,6 +43,8 @@ FOUNDATION_EXPORT const unsigned char NotionClientVersionString[];
 
 // Rich Text
 #import <NotionClient/NotionRichText.h>
+#import <NotionClient/NotionMention.h>
+#import <NotionClient/NotionEquation.h>
 
 // Database query
 #import <NotionClient/NotionFilterGroup.h>
@@ -57,6 +59,7 @@ FOUNDATION_EXPORT const unsigned char NotionClientVersionString[];
 #import <NotionClient/NotionSort.h>
 
 // Misc
+#import <NotionClient/NotionDate.h>
 #import <NotionClient/NotionSelectOption.h>
 
 #endif

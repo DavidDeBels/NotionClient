@@ -7,6 +7,8 @@
 
 #import "NotionProperty.h"
 
+@class NotionDate;
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// MARK: - NotionDateProperty Interface
@@ -15,16 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// MARK: Properties
 
-@property (nonatomic, assign, readonly) BOOL includeTime;
-
-@property (nonatomic, copy, readwrite, nullable) NSDate *start;
-@property (nonatomic, copy, readwrite, nullable) NSDate *end;
+@property (nonatomic, copy, readwrite, nullable) NotionDate *date;
 
 /// MARK: Init
 
-+ (NotionDateProperty *)dateWithName:(NSString *)name date:(nullable NSDate *)date includeTime:(BOOL)includeTime;
-
-+ (NotionDateProperty *)dateWithName:(NSString *)name start:(nullable NSDate *)start end:(nullable NSDate *)end includeTime:(BOOL)includeTime;
++ (NotionDateProperty *)dateWithName:(NSString *)name date:(nullable NotionDate *)date;
 
 @end
 

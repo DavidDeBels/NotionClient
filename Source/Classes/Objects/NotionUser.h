@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy, readonly, nullable) NSString *email;
 @property (nonatomic, copy, readonly, nullable) NSURL *avatarURL;
 
++ (NotionUser *)userWithId:(NSString *)userId type:(NotionUserType)type;
+
 @end
 
 NS_ASSUME_NONNULL_END
