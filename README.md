@@ -94,6 +94,9 @@ Once initialized a NotionClient object can make requests to the Notion API:
 * Requests that use pagination are handled automatically by default for simplicity sake. If a response indicates that more items are available, a new request will be made to fetch the next page. This means that calling a function on a NotionClient to get a list may do multiple API requests behind the scenes. The completion handler will return the results of all pages. The page size is set to 100 by default (the maximum) but this can be modified. 
 * At the moment there is no way to handle paginated requests manually but this will be added in the future.
 
+For all documentation, visit the <a href="https://github.com/DavidDeBels/NotionClient/wiki" target="_blank">Wiki</a>.
+
+
 ### Creating a NotionClient
 
 Creating a NotionClient is simple, just pass an integration token and you're good to go. 
