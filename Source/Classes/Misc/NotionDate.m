@@ -41,6 +41,10 @@
     return self;
 }
 
+- (instancetype)initWithDate:(NSDate *)date includeTime:(BOOL)includeTime {
+    return [self initWithStart:date end:nil includeTime:includeTime];
+}
+
 - (instancetype)initWithStart:(NSDate *)start end:(NSDate *)end includeTime:(BOOL)includeTime {
     self = [self init];
     if (self) {

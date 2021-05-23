@@ -34,6 +34,14 @@
     return mention;
 }
 
++ (NotionMention *)mentionWithUserId:(NSString *)userId {
+    NotionMention *mention = [[NotionMention alloc] init];
+    mention.mentionType = NotionMentionTypeUser;
+    mention.user = [NotionUser userWithId:userId type:NotionUserTypeUnknown];
+    
+    return mention;
+}
+
 + (NotionMention *)mentionWithDate:(NotionDate *)date {
     NotionMention *mention = [[NotionMention alloc] init];
     mention.mentionType = NotionMentionTypeDate;

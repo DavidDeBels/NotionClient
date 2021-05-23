@@ -33,6 +33,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param user The user object.
 + (NotionMention *)mentionWithUser:(NotionUser *)user NS_SWIFT_NAME(mention(user:));
 
+/// Mention a user.
+/// @param userId The ID of the user.
++ (NotionMention *)mentionWithUserId:(NSString *)userId NS_SWIFT_NAME(mention(userId:));
+
 /// Mention a date.
 /// @param date The date object.
 + (NotionMention *)mentionWithDate:(NotionDate *)date NS_SWIFT_NAME(mention(date:));

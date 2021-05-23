@@ -30,13 +30,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// MARK: Init
 
-+ (NotionDate *)date:(nullable NSDate *)date includeTime:(BOOL)includeTime;
++ (NotionDate *)date:(nullable NSDate *)date includeTime:(BOOL)includeTime NS_SWIFT_NAME(date(_:includeTime:));
 
-+ (NotionDate *)start:(nullable NSDate *)start end:(nullable NSDate *)end includeTime:(BOOL)includeTime;
++ (NotionDate *)start:(nullable NSDate *)start end:(nullable NSDate *)end includeTime:(BOOL)includeTime NS_SWIFT_NAME(date(start:end:includeTime:));
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-- (instancetype)initWithStart:(NSDate *)start end:(NSDate *)end includeTime:(BOOL)includeTime;
+- (instancetype)initWithDate:(nullable NSDate *)date includeTime:(BOOL)includeTime;
+
+- (instancetype)initWithStart:(nullable NSDate *)start end:(nullable NSDate *)end includeTime:(BOOL)includeTime;
 
 /// MARK: Serialize
 
