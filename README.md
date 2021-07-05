@@ -26,7 +26,7 @@ Support:
 
 ## Introduction
 
-NotionClient is a native iOS & macOS SDK for [Notion's official API](https://developers.notion.com/). NotionClient converts all API JSON objects to native Foundation objects. API responses are automatically converted to Foundation objects making it a lot easier to read the data coming from Notion. Those same Foundation objects can then be modified and sent back to the API to update the objects. Several objects also have convenience initializers for the most common use cases, e.g. setting a text property with just 1 string in 1 color.
+NotionClient is a native iOS & macOS SDK for [Notion's official API](https://developers.notion.com/). API responses are automatically converted to native Foundation objects making it a lot easier to read the data coming from Notion. Those same Foundation objects can then be modified and sent back to the API to update the objects. Most objects also have convenience initializers for the most common use cases, e.g. setting a text property with just 1 string in 1 color.
 
 This way, there is never any need to deal with Notion's complex JSON structure directly. 
 
@@ -93,6 +93,9 @@ Once initialized a NotionClient object can make requests to the Notion API:
 * If the request has failed, an NSError object will be returned in the completion handler. In case of an API error, the error object's code will be the HTTP status code and the response body containing the error message will be in the userInfo dictionary of the error object. 
 * Requests that use pagination are handled automatically by default for simplicity sake. If a response indicates that more items are available, a new request will be made to fetch the next page. This means that calling a function on a NotionClient to get a list may do multiple API requests behind the scenes. The completion handler will return the results of all pages. The page size is set to 100 by default (the maximum) but this can be modified. 
 * At the moment there is no way to handle paginated requests manually but this will be added in the future.
+
+For all documentation, visit the <a href="https://github.com/DavidDeBels/NotionClient/wiki" target="_blank">Wiki</a>.
+
 
 ### Creating a NotionClient
 
