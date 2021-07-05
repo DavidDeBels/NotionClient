@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "63EFDF29264E5FD3000C12BB"
-               BuildableName = "NotionClient.framework"
-               BlueprintName = "NotionClient-iOS"
+               BlueprintIdentifier = "632A102F2693184D008574FD"
+               BuildableName = "NotionClient_macOS.framework"
+               BlueprintName = "NotionClient-macOS"
                ReferencedContainer = "container:NotionClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -50,9 +50,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "63EFDF29264E5FD3000C12BB"
-            BuildableName = "NotionClient.framework"
-            BlueprintName = "NotionClient-iOS"
+            BlueprintIdentifier = "632A102F2693184D008574FD"
+            BuildableName = "NotionClient_macOS.framework"
+            BlueprintName = "NotionClient-macOS"
             ReferencedContainer = "container:NotionClient.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

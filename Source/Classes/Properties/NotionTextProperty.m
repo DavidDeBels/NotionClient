@@ -6,22 +6,14 @@
 //
 
 #import "NotionTextProperty.h"
+#import "NotionProperty+Private.h"
 #import "NotionTextPart.h"
 #import "NotionRichText.h"
-
-/// MARK: - NotionTextProperty Class Extension
-
-@interface NotionTextProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
 
 /// MARK: - NotionTextProperty Implementation
 
 @implementation NotionTextProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

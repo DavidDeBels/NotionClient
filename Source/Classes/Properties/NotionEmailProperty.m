@@ -6,20 +6,12 @@
 //
 
 #import "NotionEmailProperty.h"
-
-/// MARK: - NotionEmailProperty Class Extension
-
-@interface NotionEmailProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
+#import "NotionProperty+Private.h"
 
 /// MARK: - NotionEmailProperty Implementation
 
 @implementation NotionEmailProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

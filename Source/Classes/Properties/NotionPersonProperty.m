@@ -6,21 +6,13 @@
 //
 
 #import "NotionPersonProperty.h"
+#import "NotionProperty+Private.h"
 #import "NotionUser.h"
-
-/// MARK: - NotionPersonProperty Class Extension
-
-@interface NotionPersonProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
 
 /// MARK: - NotionPersonProperty Implementation
 
 @implementation NotionPersonProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

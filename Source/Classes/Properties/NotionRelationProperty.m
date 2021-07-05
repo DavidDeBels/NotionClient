@@ -6,20 +6,12 @@
 //
 
 #import "NotionRelationProperty.h"
-
-/// MARK: - NotionRelationProperty Class Extension
-
-@interface NotionRelationProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
+#import "NotionProperty+Private.h"
 
 /// MARK: - NotionRelationProperty Implementation
 
 @implementation NotionRelationProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

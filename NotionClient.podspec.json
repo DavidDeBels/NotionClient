@@ -1,6 +1,6 @@
 {
     "name": "NotionClient",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "homepage": "https://github.com/DavidDeBels/NotionClient",
     "summary": "Unofficial Notion API SDK for iOS & macOS.",
     "license": "MIT",
@@ -8,11 +8,12 @@
         "David De Bels": "david.de.bels@gmail.com"
     },
     "platforms": {
-        "ios": "11.0"
+        "ios": "11.0",
+        "osx": "10.13"
     },
     "source": {
         "git": "https://github.com/DavidDeBels/NotionClient.git",
-        "tag": "0.1.1"
+        "tag": "0.2.0"
     },
     "requires_arc": true,
     "source_files": [
@@ -23,7 +24,8 @@
         "Source/Classes/RichText/*.{h,m}",
         "Source/Classes/Query/*.{h,m}",
         "Source/Classes/Misc/*.{h,m}",
-        "Source/Categories/*.{h,m}"
+        "Source/Categories/*.{h,m}",
+        "Source/Private/*.{h,m}"
     ],
     "public_header_files": [
         "Source/*.h",
@@ -35,7 +37,9 @@
         "Source/Classes/Misc/*.h",
         "Source/Categories/*.h"
     ],
-    "private_header_files": [],
+    "private_header_files": [
+        "Source/Private/*.h"
+    ],
     "frameworks": [
         "Foundation"
     ]

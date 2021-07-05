@@ -6,21 +6,13 @@
 //
 
 #import "NotionDateProperty.h"
+#import "NotionProperty+Private.h"
 #import "NotionDate.h"
-
-/// MARK: - NotionDateProperty Class Extension
-
-@interface NotionDateProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
 
 /// MARK: - NotionDateProperty Implementation
 
 @implementation NotionDateProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

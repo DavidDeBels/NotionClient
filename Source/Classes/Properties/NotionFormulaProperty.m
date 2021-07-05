@@ -6,20 +6,12 @@
 //
 
 #import "NotionFormulaProperty.h"
-
-/// MARK: - NotionFormulaProperty Class Extension
-
-@interface NotionFormulaProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
+#import "NotionProperty+Private.h"
 
 /// MARK: - NotionFormulaProperty Implementation
 
 @implementation NotionFormulaProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

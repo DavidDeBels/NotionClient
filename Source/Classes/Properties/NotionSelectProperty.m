@@ -6,21 +6,13 @@
 //
 
 #import "NotionSelectProperty.h"
+#import "NotionProperty+Private.h"
 #import "NotionSelectOption.h"
-
-/// MARK: - NotionSelectProperty Class Extension
-
-@interface NotionSelectProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
 
 /// MARK: - NotionSelectProperty Implementation
 
 @implementation NotionSelectProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

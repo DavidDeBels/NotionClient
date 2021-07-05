@@ -6,20 +6,12 @@
 //
 
 #import "NotionURLProperty.h"
-
-/// MARK: - NotionURLProperty Class Extension
-
-@interface NotionURLProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
+#import "NotionProperty+Private.h"
 
 /// MARK: - NotionURLProperty Implementation
 
 @implementation NotionURLProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

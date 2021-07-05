@@ -6,20 +6,12 @@
 //
 
 #import "NotionCheckboxProperty.h"
-
-/// MARK: - NotionCheckboxProperty Class Extension
-
-@interface NotionCheckboxProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
+#import "NotionProperty+Private.h"
 
 /// MARK: - NotionCheckboxProperty Implementation
 
 @implementation NotionCheckboxProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

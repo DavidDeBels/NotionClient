@@ -6,20 +6,12 @@
 //
 
 #import "NotionNumberProperty.h"
-
-/// MARK: - NotionNumberProperty Class Extension
-
-@interface NotionNumberProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
+#import "NotionProperty+Private.h"
 
 /// MARK: - NotionNumberProperty Implementation
 
 @implementation NotionNumberProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init

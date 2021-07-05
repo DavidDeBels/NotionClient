@@ -110,16 +110,15 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
 - (void)queryDatabaseWithId:(NSString *)databaseId filter:(NotionFilter *)filter sorts:(NSArray<NotionSort *> *)sorts completion:(void(^)(NSArray<NotionPage *> *pages, NSError *error))completion startCursor:(nullable NSString *)startCursor appendPreviousResults:(nullable NSArray *)previousResults {
     // Endpoint path
     NSString *path = [NSString stringWithFormat:@"/databases/%@/query", databaseId];
-    
-    // Query parameters
-    NSMutableDictionary *queryParameters = [NSMutableDictionary new];
-    queryParameters[@"page_size"] = [NSString stringWithFormat:@"%ld", self.pageSize];
-    if (startCursor) {
-        queryParameters[@"start_cursor"] = startCursor;
-    }
-    
+
     // Request Body
     NSMutableDictionary *body = [NSMutableDictionary new];
+    
+    // Add pagination info
+    body[@"page_size"] = @(self.pageSize);
+    if (startCursor) {
+        body[@"start_cursor"] = startCursor;
+    }
     
     // Add filters
     if (filter) {
@@ -137,7 +136,7 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
     }
     
     // Create & perform request
-    NSMutableURLRequest *request = [self requestForMethod:@"POST" path:path query:queryParameters];
+    NSMutableURLRequest *request = [self requestForMethod:@"POST" path:path query:nil];
     request.HTTPBody = [body JSONDataWithError:nil];
 
     __weak typeof(self) weakSelf = self;
@@ -215,25 +214,7 @@ NSErrorDomain const NotionClientErrorDomain = @"so.notion.notionclient";
 /// MARK: Update Page
 
 - (void)updatePage:(NotionPage *)page completion:(void (^)(NotionPage *, NSError *))completion {
-    // Endpoint path
-    NSString *path = [NSString stringWithFormat:@"/pages/%@", page.id];
-    
-    // Request Body
-    NSMutableDictionary *body = page.serializedObject;
-    
-    // Create & perform request
-    NSMutableURLRequest *request = [self requestForMethod:@"PATCH" path:path query:nil];
-    request.HTTPBody = [body JSONDataWithError:nil];
-
-    [self performRequest:request expectedStatusCode:200 completion:^(NSDictionary *responseBody, NSError *error) {
-        if (error) {
-            completion(nil, error);
-            return;
-        }
-        
-        NotionPage *page = [[NotionPage alloc] initWithDictionary:responseBody];
-        completion(page, nil);
-    }];
+    return [self updatePageWithId:page.id properties:page.properties.allValues completion:completion];
 }
 
 - (void)updatePageWithId:(NSString *)pageId properties:(NSArray<NotionProperty *> *)properties completion:(void(^)(NotionPage *page, NSError *error))completion {

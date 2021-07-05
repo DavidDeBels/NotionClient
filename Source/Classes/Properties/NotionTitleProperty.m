@@ -6,22 +6,14 @@
 //
 
 #import "NotionTitleProperty.h"
+#import "NotionProperty+Private.h"
 #import "NotionTextPart.h"
 #import "NotionRichText.h"
-
-/// MARK: - NotionTitleProperty Class Extension
-
-@interface NotionTitleProperty ()
-
-@property (nonatomic, copy, readwrite) NSString *name;
-
-@end
 
 /// MARK: - NotionTitleProperty Implementation
 
 @implementation NotionTitleProperty
 
-@synthesize name = _name;
 @synthesize type = _type;
 
 /// MARK: Init
